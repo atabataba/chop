@@ -1,0 +1,147 @@
+/* ===== Design tokens ===== */
+:root {
+    --font-display: "Archivo Narrow", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-serif: "Source Serif 4", serif;
+  
+    --brand-name: #BDD9BF;   /* farm name */
+    --nav-color:  #2E4052;   /* nav words + dashes, section headings */
+    --overlay:    rgba(0,0,0,0.28);
+  
+    --page-max: 1100px;
+    --pad: clamp(12px, 2vw, 24px);
+  }
+  
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic; /* Archivo Narrow 400 Italic by default */
+    background: #fff;
+    color: #111;
+  }
+  
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;                  /* centers the nav */
+    padding: var(--pad);
+    background: url("img/farm.jpg") center/cover no-repeat;
+    isolation: isolate;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);           /* improves readability */
+    z-index: 0;
+  }
+  
+  /* Top-left site title (one word per line) */
+  .site-title {
+    position: absolute;
+    top: var(--pad);
+    left: 50px;                           /* move name to the right */
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--brand-name);             /* #BDD9BF */
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: 0.06em;
+    font-size: clamp(22px, 3.8vw, 44px);  /* visible but restrained */
+    z-index: 1;
+  }
+  .site-title span { display: block; }
+  
+  /* Center nav “pill” */
+  .hero-nav {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 18px);
+    padding: 0.8rem 1.2rem;               /* taller pill */
+    border-radius: 999px;
+    background: rgba(255,255,255,0.7);    /* translucent; no opacity on container */
+    backdrop-filter: blur(4px);
+  }
+  .hero-nav a {
+    text-decoration: none;
+    text-transform: lowercase;
+    color: var(--nav-color);              /* #2E4052 */
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    padding: 0.5rem 0.8rem;
+  }
+  .hero-nav a:not(:last-child)::after {
+    content: " - ";
+    margin: 0 clamp(10px, 2vw, 18px);
+    color: var(--nav-color);
+    font-size: inherit;
+  }
+  
+  /* ===== Sections (general) ===== */
+  .section {
+    padding: 4rem 1rem;
+    max-width: var(--page-max);
+    margin: 0 auto;
+  }
+  .section h2 {
+    margin: 0 0 0.75rem 0;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--nav-color);
+  }
+  
+  /* ===== About (4-up grid) ===== */
+  .about {
+    font-style: normal;                   /* body text not italic */
+    color: var(--nav-color);
+  }
+  .about-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 3.5rem 0;                 /* extra space before MISSION */
+    font-size: clamp(28px, 5.2vw, 56px);
+    letter-spacing: 0.01em;
+  }
+  .about-grid {
+    display: grid;
+    gap: clamp(22px, 3vw, 40px) clamp(24px, 4vw, 64px);
+    grid-template-columns: 1fr;          /* single column on mobile */
+    padding-top: 1rem;                   /* additional breathing room */
+  }
+  .about-item {
+    min-height: 160px;
+  }
+  .about-kicker {
+    margin: 0 0 0.75rem 0;
+    font-family: var(--font-display);
+    font-style: italic;                   /* echo site style for labels */
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+    font-size: clamp(12px, 1.6vw, 14px);
+  }
+  .about p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.6;
+  }
+  /* 2×2 grid on wider screens */
+  @media (min-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+      row-gap: clamp(28px, 4vw, 56px);
+    }
+  }
+  
