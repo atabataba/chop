@@ -48,7 +48,7 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat;
+  background:url("./farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
