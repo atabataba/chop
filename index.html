@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CHOP AND CARRY FARM</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400&family=Source+Serif+4:opsz@8..60&display=swap" rel="stylesheet">
+  <!-- Fonts: exact faces you need -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
-  <!-- Your main CSS (with cache-buster) -->
-  <link rel="stylesheet" href="styles.css?v=2" />
-
-  <!-- Hard override to ensure the hero uses farm.jpg from the ROOT -->
-  <style>
-    /* If styles.css loads, this still wins because it’s later (cascade) */
-    .hero {
-      background-image: url("farm.jpg?v=2") !important;
-      background-position: center !important;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-color: #999 !important; /* fallback if image fails */
-    }
-  </style>
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <!-- ===== HERO ===== -->
+<body>
+  <!-- INTRO OVERLAY (animation draws on this, then fades) -->
+  <div id="intro" class="intro-overlay" aria-hidden="true">
+    <canvas id="introCanvas"></canvas>
+  </div>
+
+  <!-- HERO -->
   <header class="hero" role="banner" aria-label="Intro">
+    <!-- Wordmark: Archivo Narrow 400 Italic ONLY -->
     <h1 class="site-title" aria-label="CHOP AND CARRY FARM">
       <span>CHOP</span>
       <span>AND</span>
@@ -34,6 +29,7 @@
       <span>FARM</span>
     </h1>
 
+    <!-- Tabs: Space Mono 400 ONLY -->
     <nav class="hero-nav" aria-label="Primary">
       <a href="#about">about</a>
       <a href="#residency">residency</a>
@@ -42,38 +38,235 @@
   </header>
 
   <main id="main">
-    <section id="about" class="section about" aria-labelledby="about-title">
-      <h2 id="about-title" class="about-title">ABOUT</h2>
-      <div class="about-grid">
-        <article class="about-item">
-          <h3 class="about-kicker">MISSION</h3>
-          <p>Chop and Carry Farm is an emerging Soto Zen practice community on the big island of Hawai‘i. Inspired by the early days of Tassajara, we are working to create a place of simple living, meditation, and study where daily work is itself the vehicle of Buddhist practice.</p>
-        </article>
-        <article class="about-item">
-          <h3 class="about-kicker">SUSTAINABILITY</h3>
-          <p>Our intention is to live within what the land can sustain. That means relying on solar and wind, not fossil fuels; eating what can be grown; and making what can be crafted on the island. The goal is not only to avoid harm but to nourish the land and become its steward. In this way, sustainability is inseparable from Buddhist training.</p>
-        </article>
-        <article class="about-item" id="residency">
-          <h3 class="about-kicker">RESIDENCY</h3>
-          <p>We are developing a residency program for no more than eight people. Life here combines meditation, communal work, and study with time for personal projects in farming or craft. Residents live simply, share in the rhythms of the land, and take part in shaping the community as it grows.</p>
-        </article>
-        <article class="about-item">
-          <h3 class="about-kicker">TEACHINGS</h3>
-          <p>Practice at Chop and Carry Farm is grounded in the teachings of Shunryu Suzuki Roshi and Dōgen Zenji, with a strong emphasis on farm and craft. Zen here is physical and hands-on, where everyday tasks such as growing food, cooking, or building are themselves forms of study. Over time, we hope to offer workshops, public practice opportunities, and ways for visitors to learn with us.</p>
-        </article>
+    <!-- ABOUT -->
+    <section id="about" class="section about-split" aria-labelledby="about-title">
+      <div class="about-left">
+        <h2 id="about-title" class="about-hero">
+          Before enlightenment, chop wood, carry water.<br>
+          After enlightenment, chop wood, carry water.
+        </h2>
+      </div>
+
+      <div class="about-right">
+        <div class="about-right-inner">
+          <p class="kicker">(about chop and carry farm)</p>
+          <ol class="about-list">
+            <li>
+              <div class="item-title"><em>mission</em></div>
+              <div class="item-copy">
+                An emerging self-sustaining community centered on Zen practice, simple living, and harmony with the natural world.
+              </div>
+            </li>
+            <li>
+              <div class="item-title"><em>teachings</em></div>
+              <div class="item-copy">
+                Practice is grounded in the teachings of Suzuki Roshi and Dōgen Zenji, integrating meditation, study, and physical work in farm and craft as one continuous expression of Zen.
+              </div>
+            </li>
+            <li>
+              <div class="item-title"><em>community</em></div>
+              <div class="item-copy">
+                A new practice center is taking shape in Hawai‘i, calling for people to help build its foundations and form a Zen community.
+              </div>
+            </li>
+          </ol>
+
+          <div class="about-cta">
+            <a class="btn ghost" href="#inquire">inquire</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="residency-title">
-      <h2 id="residency-title">RESIDENCY</h2>
-      <p>Program overview, application windows, expectations, and facilities.</p>
+    <!-- RESIDENCY (stub kept as-is) -->
+    <section id="residency" class="residency-block" aria-labelledby="residency-title">
+      <div class="residency-inner">
+        <h2 id="residency-title" class="residency-title">Residency</h2>
+    
+        <div class="residency-copy">
+          <p>
+            Up to eight people will live and practice together, contributing to the early
+            formation of the practice and community. The schedule follows a ten-day cycle based
+            on the lunar calendar, with zazen, communal work, and study forming the core of practice.
+            Personal projects in areas such as woodworking, ceramics, writing, tofu making,
+            miso and pickle fermentation, silkworms, or metalwork develop skills that support both
+            individual growth and the life of the community. Daily life combines meditation, work,
+            and craft as one continuous practice.
+          </p>
+        </div>
+    
+        <figure class="residency-figure">
+          <img src="img/zazen.jpg" alt="Zazen practice at the farm" class="residency-img">
+        </figure>
+      </div>
     </section>
 
-    <section id="inquire" class="section" aria-labelledby="inquire-title">
-      <h2 id="inquire-title">INQUIRE</h2>
-      <p>Contact details or inquiry form goes here.</p>
+    <!-- INQUIRE -->
+    <section id="inquire">
+      <h2 id="inquire-title">Inquire</h2>
+      <p>
+        If you feel drawn to this early stage of practice and community, or called to help in its building, please get in touch to learn more.
+      </p>
+      <p>
+        Email: <a href="mailto:Pauldiscoedesign@gmail.com">Pauldiscoedesign@gmail.com</a>
+      </p>
     </section>
+    
   </main>
+
+  <!-- ENSŌ ANIMATION (your working script, unchanged) -->
+  <script>
+  (() => {
+    const overlay = document.getElementById('intro');
+    const canvas  = document.getElementById('introCanvas');
+    const ctx     = canvas.getContext('2d', { alpha: true });
+
+    const T = { scribble: 700, draw: 1700, hold: 650 };
+    const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    function resize() {
+      const w = window.innerWidth, h = window.innerHeight;
+      canvas.width = Math.floor(w * DPR);
+      canvas.height = Math.floor(h * DPR);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const INK = '#000';
+    const cx = () => window.innerWidth / 2;
+    const cy = () => window.innerHeight / 2;
+    const R  = () => Math.min(window.innerWidth, window.innerHeight) * 0.30;
+    const TAU = Math.PI * 2;
+    const deg = d => d * Math.PI / 180;
+    const norm = a => (a % TAU + TAU) % TAU;
+    const easeInOut = t => (t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2);
+    const snoise = (a,b) => Math.sin(a)*0.5 + Math.sin(b)*0.5;
+
+    const hairs = 30;
+    const hairPts = Array.from({ length: hairs }, (_, i) => ({
+      x: cx(), y: cy(), ang: (i/hairs)*TAU, len: 6 + Math.random()*7
+    }));
+    function drawScribbles(k) {
+      const chaos = 1 - k;
+      for (let i = 0; i < hairs; i++) {
+        const p = hairPts[i];
+        p.ang += 0.10 + i*0.0008;
+        const radius = (0.12 + 0.82*k) * R();
+        const ang = p.ang + snoise(p.x*0.01, p.y*0.01 + i) * 0.7 * chaos;
+        const tx = cx() + radius * Math.cos(ang);
+        const ty = cy() + radius * Math.sin(ang);
+        p.x += (tx - p.x) * (0.18 + 0.12*(1-chaos)) + (Math.random()-0.5)*7*chaos;
+        p.y += (ty - p.y) * (0.18 + 0.12*(1-chaos)) + (Math.random()-0.5)*7*chaos;
+
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x + Math.cos(ang) * p.len, p.y + Math.sin(ang) * p.len);
+        ctx.lineWidth = 4 + 2*(1-k);
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = INK;
+        ctx.globalAlpha = 0.9;
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    const START_DEG = 135;
+    const TARGET_ARC_PCT = 0.9;
+    const DIR = 1;
+    const startA = deg(START_DEG);
+    const desiredArc = TARGET_ARC_PCT * TAU;
+
+    function drawRibbon(progress) {
+      const baseWidth = 54;
+      const coreLayers = 4;
+      const featherLayers = 2;
+      const dryStartT = 0.72;
+      const r = R();
+      const Cx = cx(), Cy = cy();
+      const steps = 900;
+      const widthAt = t => {
+        let w = baseWidth;
+        const e = 0.12;
+        if (t < e) w *= easeInOut(t / e);
+        else if (t > 1 - e) w *= easeInOut((1 - t) / e);
+        if (t > dryStartT) { const d = (t - dryStartT) / (1 - dryStartT); w *= 1 - d * 0.18; }
+        return w;
+      };
+      const drawLayer = (radiusOffset, alpha) => {
+        ctx.fillStyle = INK;
+        ctx.globalAlpha = alpha;
+        let prevL = null, prevR = null;
+        const maxStep = Math.floor(steps * progress);
+        for (let i = 0; i <= maxStep; i++) {
+          const u = i / steps;
+          const a = norm(startA + DIR * (desiredArc * u));
+          const x = Cx + r * Math.cos(a);
+          const y = Cy + r * Math.sin(a);
+          const tx = -Math.sin(a), ty = Math.cos(a);
+          const nx = -ty, ny = tx;
+          const w = 0.5 * widthAt(u);
+          const L = { x: x + nx * w, y: y + ny * w };
+          const Rb = { x: x - nx * w, y: y - ny * w };
+          if (prevL && prevR) {
+            ctx.beginPath();
+            ctx.moveTo(prevL.x, prevL.y);
+            ctx.lineTo(prevR.x, prevR.y);
+            ctx.lineTo(Rb.x, Rb.y);
+            ctx.lineTo(L.x, L.y);
+            ctx.closePath();
+            ctx.fill();
+          }
+          prevL = L; prevR = Rb;
+          if (i === maxStep) {
+            ctx.beginPath();
+            ctx.arc(x, y, w * 0.6, 0, TAU);
+            ctx.fill();
+          }
+        }
+        ctx.globalAlpha = 1;
+      };
+      for (let k = 0; k < coreLayers; k++) {
+        const f = (k / (coreLayers - 1)) - 0.5;
+        drawLayer(f * 1.0, 0.95);
+      }
+      for (let k = 0; k < featherLayers; k++) {
+        drawLayer(-1.2 - k * 0.6, 0.22 * (1 - k * 0.35));
+      }
+    }
+
+    const t0 = performance.now();
+    function frame(now) {
+      const t = now - t0;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (t < T.scribble) {
+        drawScribbles(t / T.scribble);
+        requestAnimationFrame(frame); return;
+      }
+      if (t < T.scribble + T.draw) {
+        const k = (t - T.scribble) / T.draw;
+        const e = easeInOut(k);
+        if (e < 0.65) {
+          ctx.globalAlpha = 1 - e;
+          drawScribbles(1);
+          ctx.globalAlpha = 1;
+        }
+        drawRibbon(e);
+        requestAnimationFrame(frame); return;
+      }
+      if (t < T.scribble + T.draw + T.hold) {
+        drawRibbon(1);
+        requestAnimationFrame(frame); return;
+      }
+      overlay.classList.add('fade-out');
+      overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+    }
+
+    requestAnimationFrame(frame);
+  })();
+  </script>
 </body>
 </html>
 
