@@ -55,7 +55,7 @@
     }
   
     const START_DEG = 135;
-    const TARGET_ARC_PCT = 0.82; // keep your current openness (increase toward 1 for more complete)
+    const TARGET_ARC_PCT = 0.82; 
     const DIR = 1;
     const startA = deg(START_DEG);
     const desiredArc = TARGET_ARC_PCT * TAU;
@@ -102,7 +102,7 @@
           }
           prevL = L; prevR = R;
   
-          // smaller tail cap to avoid a blob when nearly closed
+   
           if (i === maxStep) {
             ctx.beginPath();
             ctx.arc(x, y, w * 0.6, 0, TAU); // was w
@@ -134,9 +134,9 @@
         const k = (t - T.scribble) / T.draw;
         const e = easeInOut(k);
   
-        // stop scribbles early so no tiny ticks remain near the gap
+     
         if (e < 0.65) {
-          ctx.globalAlpha = 1 - e;   // crossfade out while early
+          ctx.globalAlpha = 1 - e;  
           drawScribbles(1);
           ctx.globalAlpha = 1;
         }
