@@ -48,7 +48,7 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat;
+  background:url("./farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
@@ -186,113 +186,10 @@ body{
   letter-spacing:.04em;
 }
 
-/* ===== RESIDENCY (refined) ===== */
+/* ===== RESIDENCY ===== */
 .residency-block{
   --res-bg: #2f3f44;
-  --res-fg: #f3f5f2;
-
-  background: var(--res-bg);
-  color: var(--res-fg);
-  padding: clamp(56px, 9vw, 120px) 1rem;
-}
-
-.residency-inner{
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.residency-title{
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(28px, 4.2vw, 44px);
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  text-align: center;
-  color: var(--res-fg);
-  margin: 0 0 clamp(18px, 2.2vw, 24px);
-  opacity: 1;
-}
-
-.residency-copy{
-  max-width: 70ch;
-  margin: 0 auto clamp(32px, 5vw, 60px);
-  text-align: center;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(16px, 1.4vw, 18px);
-  line-height: 1.7;
-  color: var(--res-fg);
-  opacity: .95;
-}
-
-.residency-figure{
-  display: flex;
-  justify-content: center;
-}
-
-.residency-img{
-  display: block;
-  width: 50%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 12px 36px rgba(0,0,0,.35);
-}
-
-@media (max-width: 900px){
-  .residency-img{
-    width: 80%;
-  }
-}
-
-/* ===== INQUIRE ===== */
-#inquire {
-  text-align: center;
-  margin: 8rem 0;
-}
-
-#inquire h2 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(20px, 2vw, 26px);
-  margin-bottom: 1.5rem;
-  color: #111;
-}
-
-#inquire p {
-  font-family: var(--font-serif);
-  font-size: clamp(15px, 1.3vw, 18px);
-  line-height: 1.6;
-  color: #111;
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
-}
-
-#inquire a {
-  color: #111;
-  text-decoration: underline;
-  font-style: italic;
-  transition: opacity 0.2s ease;
-}
-
-#inquire a:hover {
-  opacity: 0.7;
-}
-
-.residency-title {
-  color: var(--res-fg) !important;
-  opacity: 1 !important;
-}
-
-/* ===== ITALIC / REGULAR FIXES ===== */
-
-/* Residency: italic heading, regular body text */
-.residency-title { font-style: italic; }
-.residency-copy { font-style: normal; }
-
-/* Inquire: italic heading, regular paragraph text */
-#inquire-title { font-style: italic; }
-#inquire p { font-style: normal; }
+  --res-f
 
 
 
