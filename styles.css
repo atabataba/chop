@@ -233,7 +233,7 @@ body{
 
 .residency-img{
   display: block;
-  width: 50%;  /* 50% smaller as requested */
+  width: 50%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 12px 36px rgba(0,0,0,.35);
@@ -279,19 +279,21 @@ body{
   opacity: 0.7;
 }
 
-
 .residency-title {
-  color: var(--res-fg) !important; /* match the paragraph text color */
-  opacity: 1 !important; /* ensure it’s not faded */
+  color: var(--res-fg) !important;
+  opacity: 1 !important;
 }
 
-/* Residency: italic heading, regular text */
+/* ===== ITALIC / REGULAR FIXES ===== */
+
+/* Residency: italic heading, regular body text */
 .residency-title { font-style: italic; }
 .residency-copy { font-style: normal; }
 
-/* Inquire: italic heading, regular text */
-#inquire-title { font-style: italic; } /* redundant if already italic */
+/* Inquire: italic heading, regular paragraph text */
+#inquire-title { font-style: italic; }
 #inquire p { font-style: normal; }
+
 
 
 
