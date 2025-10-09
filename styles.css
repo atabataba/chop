@@ -1,4 +1,4 @@
-
+/* ===== Design tokens ===== */
 :root{
   --font-display: "Archivo Narrow", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-serif: "Source Serif 4", serif;
@@ -22,7 +22,7 @@ body{
   background:#fff;
 }
 
-
+/* ===== INTRO OVERLAY ===== */
 .intro-overlay{
   position: fixed;
   inset: 0;
@@ -41,14 +41,14 @@ body{
   display: block;
 }
 
-
+/* ===== HERO ===== */
 .hero{
   min-height:100vh;
   position:relative;
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("./farm.jpg") center/cover no-repeat;
+  background:url("img/farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
@@ -72,7 +72,7 @@ body{
 }
 .site-title span{display:block}
 
-
+/* Tabs — Space Mono Regular 400 */
 .hero-nav{
   z-index:2;
   display:flex; align-items:center; justify-content:center;
@@ -97,7 +97,7 @@ body{
 }
 .hero-nav a:hover{opacity:.72}
 
-
+/* ===== ABOUT ===== */
 .section{max-width:var(--page-max); margin:0 auto; padding:4rem 1rem}
 .section h2{margin:0 0 .75rem 0; font-weight:400; letter-spacing:.06em; text-transform:uppercase}
 
@@ -108,6 +108,7 @@ body{
   align-items:start;
 }
 
+/* Smaller headline on left */
 .about-left .about-hero{
   margin:0;
   font-family:var(--font-serif);
@@ -122,7 +123,7 @@ body{
   align-self:start;
 }
 
-
+/* (about) kicker */
 .about-right .kicker{
   margin:.25rem 0 1rem;
   font-family:var(--font-serif);
@@ -171,13 +172,13 @@ body{
 }
 .btn.ghost:hover{background:#111;color:#fff}
 
-
+/* Mobile stack */
 @media (max-width: 900px){
   .about-split{grid-template-columns: 1fr;}
   .about-cta{flex-wrap:wrap}
 }
 
-
+/* Section headers elsewhere */
 #residency-title, #inquire-title{
   color:#2E4052;
   font-family:var(--font-serif);
@@ -185,7 +186,7 @@ body{
   letter-spacing:.04em;
 }
 
-
+/* ===== RESIDENCY (refined) ===== */
 .residency-block{
   --res-bg: #2f3f44;
   --res-fg: #f3f5f2;
@@ -232,7 +233,7 @@ body{
 
 .residency-img{
   display: block;
-  width: 50%;  
+  width: 50%;  /* 50% smaller as requested */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 12px 36px rgba(0,0,0,.35);
@@ -244,7 +245,7 @@ body{
   }
 }
 
-
+/* ===== INQUIRE ===== */
 #inquire {
   text-align: center;
   margin: 8rem 0;
@@ -280,8 +281,18 @@ body{
 
 
 .residency-title {
-  color: var(--res-fg) !important; 
-  opacity: 1 !important; 
+  color: var(--res-fg) !important; /* match the paragraph text color */
+  opacity: 1 !important; /* ensure it’s not faded */
 }
+
+/* Residency: italic heading, regular text */
+.residency-title { font-style: italic; }
+.residency-copy { font-style: normal; }
+
+/* Inquire: italic heading, regular text */
+#inquire-title { font-style: italic; } /* redundant if already italic */
+#inquire p { font-style: normal; }
+
+
 
 
