@@ -29,8 +29,13 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  /* FIXED: relative path for project site */
-  background:url("./img/farm.jpg") center/cover no-repeat;
+
+  /* Use explicit background-image props (less likely to be overridden) */
+  background-image: url("./img/farm.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   isolation:isolate;
 }
 .hero::before{
