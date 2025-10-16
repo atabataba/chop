@@ -277,4 +277,6 @@ body{
   margin-top: clamp(40px, 4vw, 80px);
 }
 @media (max-width: 900px){
-  #residency .schedule-grid .schedule-pane:first-child
+  #residency .schedule-grid .schedule-pane:first-child{ margin-left: 0; }
+  #residency .schedule-grid .schedule-pane:last-child{ margin-top: 0; }
+}
