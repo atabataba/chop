@@ -129,6 +129,7 @@ body{
 
 /* Drop Ten-Day Cycle down (~50%) relative to its previous position */
 #residency .schedule-grid .schedule-pane:last-child{
+  margin-left: 25%;
   margin-top: clamp(60px, 8vw, 160px);
 }
 @media (max-width: 900px){
