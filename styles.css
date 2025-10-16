@@ -48,10 +48,17 @@ body{
 .section{max-width:var(--page-max); margin:0 auto; padding:2.5rem 1rem;}
 .about-split{display:grid; grid-template-columns:1fr 0.9fr; gap:clamp(20px,3vw,36px); align-items:start;}
 .about-left .about-hero{
-  margin:0; font-family:var(--font-serif); font-weight:400; font-style:normal;
-  line-height:1.2; font-size:clamp(17px,1.8vw,22px); color:#111; max-width:34ch; text-align:left; padding-top:0;
+  margin-top: 3rem; /* moved lower */
+  font-family:var(--font-serif);
+  font-weight:800; /* bolder */
+  font-style:normal;
+  line-height:1.3;
+  font-size:clamp(18px,2vw,24px);
+  color:#111;
+  max-width:34ch;
+  text-align:left;
 }
-.quote-author{display:block;margin-top:.8rem;font-size:.9em;opacity:.9;text-align:left;}
+.quote-author{display:block;margin-top:1rem;font-size:.95em;font-weight:400;opacity:.85;text-align:left;}
 .about-right .kicker{margin:0 0 .5rem;font-family:var(--font-serif);font-weight:700;font-size:clamp(18px,2vw,24px);color:#111;}
 .about-list{list-style:decimal;padding-left:1.2em;margin:0 0 1rem 0;}
 .about-list > li{margin:0 0 .75rem 0;}
@@ -69,7 +76,7 @@ body{
 
 /* ===== RESIDENCY ===== */
 .residency-block{background-color:#DAD6CD;color:#111;padding:clamp(40px,6vw,80px) 1rem;}
-.residency-inner{max-width:1600px;margin:0 auto;} /* wider so gallery can grow */
+.residency-inner{max-width:1600px;margin:0 auto;}
 .residency-title{font-family:var(--font-serif);font-weight:700;text-align:center;color:#111;font-size:clamp(26px,3.6vw,38px);margin-bottom:1rem;}
 .residency-blurb{max-width:65ch;margin:0 auto 2rem;text-align:center;font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;opacity:.95;}
 
@@ -78,7 +85,6 @@ body{
 
 .schedule-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(17px,1.8vw,20px);margin:0 0 .5rem 0;}
 
-/* ONE-COLUMN daily list */
 .daily-list{
   list-style:none;
   padding:0;
@@ -94,7 +100,7 @@ body{
 }
 .daily-list time{
   font-weight:700;
-  font-variant-numeric: tabular-nums; /* lined-up digits */
+  font-variant-numeric: tabular-nums;
   margin-right:.4rem;
 }
 .schedule-note{margin-top:.75rem;font-family:var(--font-serif);font-style:italic;font-size:.95em;color:#111;opacity:.85;}
@@ -102,10 +108,20 @@ body{
 .cycle-list{margin:0;padding-left:1rem;font-family:var(--font-serif);color:#111;}
 .cycle-list li{margin:0 0 .45rem 0;}
 
-/* ===== Larger, responsive gallery ===== */
+/* Move Daily Schedule right */
+#residency .schedule-grid .schedule-pane:first-child{
+  margin-left: clamp(80px, 8vw, 140px);
+}
+@media (max-width: 900px){
+  #residency .schedule-grid .schedule-pane:first-child{
+    margin-left: 0;
+  }
+}
+
+/* ===== Larger Gallery ===== */
 .residency-gallery{
   display:grid;
-  grid-template-columns: repeat(3, minmax(420px, 1fr)); /* larger cards */
+  grid-template-columns: repeat(3, minmax(420px, 1fr));
   gap: clamp(16px, 2vw, 26px);
   align-items:start;
   margin-top:1rem;
@@ -128,3 +144,4 @@ body{
 #inquire p{font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;max-width:550px;margin:0 auto 1rem;}
 #inquire a{color:#111;text-decoration:underline;font-style:italic;transition:opacity .2s;}
 #inquire a:hover{opacity:.7;}
+
