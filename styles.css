@@ -29,8 +29,8 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  /* IMPORTANT: use relative path for project sites */
-  background:url("img/farm.jpg") center/cover no-repeat;
+  /* FIXED: relative path for project site */
+  background:url("./img/farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
@@ -318,5 +318,4 @@ body{
   transition: opacity 0.2s ease;
 }
 #inquire a:hover { opacity: 0.7; }
-
 
