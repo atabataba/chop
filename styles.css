@@ -1,4 +1,3 @@
-/* ===== Design tokens ===== */
 :root{
   --font-display: "Archivo Narrow", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-serif: "Source Serif 4", serif;
@@ -29,7 +28,7 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat;
+  background:url("farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
@@ -53,7 +52,6 @@ body{
 }
 .site-title span{display:block}
 
-/* Tabs — Space Mono Regular 400 */
 .hero-nav{
   z-index:2;
   display:flex; align-items:center; justify-content:center;
@@ -64,7 +62,6 @@ body{
 .hero-nav a{
   font-family: 'Space Mono', monospace;
   font-weight: 400;
-  font-style: normal;
   text-transform: uppercase;
   letter-spacing: .15em;
   color: var(--nav-color);
@@ -88,28 +85,19 @@ body{
   gap:clamp(24px,4vw,48px);
   align-items:start;
 }
-
-/* Quote box (Dōgen) */
 .about-left .about-hero{
   margin:0;
   font-family:var(--font-serif);
-  font-weight:400;
   font-style:normal;
   line-height:1.4;
   font-size:clamp(22px,3vw,36px);
   color:#111;
-
-  /* Contained/boxed feel */
   max-width:28ch;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
-
-  /* 👇 Add space to bring it down */
   padding-top:4rem;
 }
-
-/* author line */
 .quote-author{
   display:block;
   margin-top:1.5rem;
@@ -120,14 +108,11 @@ body{
 
 .about-right{ align-self:start; }
 
-/* 'about' label — lowercase, bold, not italic; adjust size here */
 .about-right .kicker{
   margin:.25rem 0 1rem;
   font-family:var(--font-serif);
   font-weight:700;
   font-style:normal;
-  text-transform:none;
-  color:#111;
   font-size:clamp(20px, 2.4vw, 30px);
 }
 
@@ -142,12 +127,10 @@ body{
   font-style:italic;
   font-weight:400;
   font-size:clamp(16px,1.6vw,20px);
-  line-height:1.3;
   margin-bottom:.25rem;
 }
 .item-copy{
   font-family:var(--font-serif);
-  font-weight:400;
   font-size:clamp(14px,1.4vw,18px);
   line-height:1.5;
   color:#222;
@@ -169,7 +152,6 @@ body{
 }
 .btn.ghost:hover{background:#111;color:#fff}
 
-/* Mobile stack */
 @media (max-width: 900px){
   .about-split{grid-template-columns: 1fr;}
   .about-cta{flex-wrap:wrap}
@@ -183,35 +165,25 @@ body{
 }
 .residency-inner{ max-width: 1100px; margin: 0 auto; }
 
-/* Heading: lowercase, bold, not italic */
 .residency-title{
   font-family: var(--font-serif);
   font-weight: 700;
-  font-style: normal;
-  text-transform: none;
   text-align: center;
   color: #111;
   font-size: clamp(28px, 4.2vw, 44px);
-  line-height: 1.1;
-  margin: 0 0 clamp(18px, 2.2vw, 24px);
-  opacity: 1;
 }
 
-/* Brief blurb under heading */
 .residency-blurb{
   max-width: 70ch;
   margin: 0 auto clamp(28px, 4vw, 44px);
   text-align: center;
   font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: normal;
   font-size: clamp(15px, 1.3vw, 18px);
   line-height: 1.6;
   color: #111;
   opacity: .95;
 }
 
-/* Two-column schedule */
 .schedule-grid{
   display: grid;
   grid-template-columns: 3fr 3fr;
@@ -221,11 +193,8 @@ body{
   max-width: 1100px;
 }
 .schedule-title{
-  margin: 0 0 .75rem 0;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-style: normal;
-  text-transform: none;
   font-size: clamp(18px, 2vw, 22px);
   color: #111;
 }
@@ -234,61 +203,41 @@ body{
   grid-template-columns: auto 1fr;
   column-gap: 14px;
   row-gap: 8px;
-  margin: 0;
 }
-.daily-schedule div{ display: contents; }
-.daily-schedule dt{
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-style: normal;
-  color: #111;
-}
-.daily-schedule dd{
-  margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: normal;
-  color: #111;
-}
+.daily-schedule dt{font-weight:700;}
+.daily-schedule dd{margin:0;}
+
 .schedule-note{
   margin-top: .75rem;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 0.95em;
-  color: #111;
-  opacity: .85;
 }
 .cycle-list{
   margin: 0;
   padding-left: 1rem;
   font-family: var(--font-serif);
-  font-style: normal;
-  color: #111;
 }
-.cycle-list li{ margin: 0 0 .45rem 0; }
+.cycle-list li{ margin-bottom:.45rem; }
 
-/* Responsive: stack schedule columns on small screens */
 @media (max-width: 900px){
   .schedule-grid{ grid-template-columns: 1fr; }
 }
 
-/* 3-image gallery */
+/* Gallery */
 .residency-gallery{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(16px, 2vw, 28px);
-  align-items: start;
 }
-.residency-card{ margin: 0; }
 .residency-card img{
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 12px 36px rgba(0,0,0,.35);
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 12px 36px rgba(0,0,0,.35);
 }
 
-/* Responsive gallery */
 @media (max-width: 1000px){
   .residency-gallery{ grid-template-columns: repeat(2, 1fr); }
 }
@@ -306,13 +255,11 @@ body{
   font-style: italic;
   font-size: clamp(20px, 2vw, 26px);
   margin-bottom: 1.5rem;
-  color: #111;
 }
 #inquire p {
   font-family: var(--font-serif);
   font-size: clamp(15px, 1.3vw, 18px);
   line-height: 1.6;
-  color: #111;
   max-width: 600px;
   margin: 0 auto 1rem auto;
 }
@@ -320,11 +267,9 @@ body{
   color: #111;
   text-decoration: underline;
   font-style: italic;
-  transition: opacity 0.2s ease;
 }
 #inquire a:hover { opacity: 0.7; }
 
-/* ===== Residency positioning tweaks ===== */
 #residency .schedule-grid .schedule-pane:first-child{
   margin-left: clamp(100px, 14vw, 200px);
 }
@@ -332,6 +277,4 @@ body{
   margin-top: clamp(40px, 4vw, 80px);
 }
 @media (max-width: 900px){
-  #residency .schedule-grid .schedule-pane:first-child{ margin-left: 0; }
-  #residency .schedule-grid .schedule-pane:last-child{ margin-top: 0; }
-}
+  #residency .schedule-grid .schedule-pane:first-child
