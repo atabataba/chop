@@ -48,9 +48,9 @@ body{
 .section{max-width:var(--page-max); margin:0 auto; padding:2.5rem 1rem;}
 .about-split{display:grid; grid-template-columns:1fr 0.9fr; gap:clamp(20px,3vw,36px); align-items:start;}
 
-/* Quote — bolder and moved lower per your request */
+/* Quote — bolder and LOWER (≈30% more than before) */
 .about-left .about-hero{
-  margin-top: 6rem; /* was 3rem */
+  margin-top: 8rem; /* was 6rem → push down more */
   font-family:var(--font-serif);
   font-weight:800;
   font-style:normal;
@@ -73,79 +73,90 @@ body{
 
 @media (max-width:900px){
   .about-split{grid-template-columns:1fr;}
-  .about-left .about-hero{max-width:40ch;text-align:center;}
+  .about-left .about-hero{max-width:40ch;text-align:center;margin-top:4rem;}
   .quote-author{text-align:center;}
   .about-right{margin-top:1.5rem;}
 }
 
 /* ===== RESIDENCY ===== */
 .residency-block{background-color:#DAD6CD;color:#111;padding:clamp(40px,6vw,80px) 1rem;}
-.residency-inner{max-width:1600px;margin:0 auto;}
-.residency-title{font-family:var(--font-serif);font-weight:700;text-align:center;color:#111;font-size:clamp(26px,3.6vw,38px);margin-bottom:1rem;}
-.residency-blurb{max-width:65ch;margin:0 auto 2rem;text-align:center;font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;opacity:.95;}
 
-.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:start;margin:0 auto 1.25rem;}
+/* Narrower inner width so gallery doesn’t hug edges */
+.residency-inner{
+  max-width: 1200px;  /* was wider; this pulls everything in from page edges */
+  margin: 0 auto;
+}
+
+.residency-title{
+  font-family:var(--font-serif);font-weight:700;text-align:center;color:#111;
+  font-size:clamp(26px,3.6vw,38px);margin-bottom:1rem;
+}
+.residency-blurb{
+  max-width:65ch;margin:0 auto 2rem;text-align:center;
+  font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;opacity:.95;
+}
+
+.schedule-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(30px,4vw,60px);align-items:start;margin:0 auto 1.25rem;
+}
 @media(max-width:900px){.schedule-grid{grid-template-columns:1fr;}}
 
-.schedule-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(17px,1.8vw,20px);margin:0 0 .5rem 0;}
+.schedule-title{
+  font-family:var(--font-serif);font-weight:700;font-size:clamp(17px,1.8vw,20px);margin:0 0 .5rem 0;
+}
 
 /* One-column Daily Schedule list */
 .daily-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  row-gap:.55rem;
+  list-style:none;padding:0;margin:0;display:grid;row-gap:.55rem;
 }
 .daily-list li{
-  font-family:var(--font-serif);
-  font-size:clamp(14px,1.25vw,18px);
-  line-height:1.45;
-  color:#111;
+  font-family:var(--font-serif);font-size:clamp(14px,1.25vw,18px);line-height:1.45;color:#111;
 }
-.daily-list time{
-  font-weight:700;
-  font-variant-numeric: tabular-nums;
-  margin-right:.4rem;
-}
+.daily-list time{font-weight:700;font-variant-numeric:tabular-nums;margin-right:.4rem;}
 .schedule-note{margin-top:.75rem;font-family:var(--font-serif);font-style:italic;font-size:.95em;color:#111;opacity:.85;}
 
 .cycle-list{margin:0;padding-left:1rem;font-family:var(--font-serif);color:#111;}
 .cycle-list li{margin:0 0 .45rem 0;}
 
-/* Move Daily Schedule right (desktop/tablet) */
+/* Move Daily Schedule right a bit (since inner width is smaller now) */
 #residency .schedule-grid .schedule-pane:first-child{
-  margin-left: clamp(80px, 8vw, 140px);
-}
-@media (max-width: 900px){
-  #residency .schedule-grid .schedule-pane:first-child{
-    margin-left: 0;
-  }
+  margin-left: clamp(60px, 6vw, 100px);
 }
 
-/* ===== Residency Gallery — square cards ===== */
+/* Drop Ten-Day Cycle down (~50%) relative to its previous position */
+#residency .schedule-grid .schedule-pane:last-child{
+  margin-top: clamp(60px, 8vw, 160px);
+}
+
+@media (max-width: 900px){
+  #residency .schedule-grid .schedule-pane:first-child{ margin-left: 0; }
+  #residency .schedule-grid .schedule-pane:last-child{ margin-top: 0; }
+}
+
+/* ===== Residency Gallery — square cards, smaller, centered ===== */
 .residency-gallery{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2vw, 26px);
+  gap: clamp(18px, 2.2vw, 28px);
   justify-items: center;
   margin-top: 2rem;
 }
 
 .residency-card{
-  width: clamp(280px, 30vw, 360px); /* responsive card width */
+  width: clamp(260px, 28vw, 320px); /* smaller overall card width */
   aspect-ratio: 1 / 1;              /* square */
 }
 
 .residency-card img{
   width: 100%;
   height: 100%;
-  object-fit: cover;                 /* fills square nicely */
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 12px 36px rgba(0,0,0,.35);
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1100px){
   .residency-gallery{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px){
@@ -158,4 +169,5 @@ body{
 #inquire p{font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;max-width:550px;margin:0 auto 1rem;}
 #inquire a{color:#111;text-decoration:underline;font-style:italic;transition:opacity .2s;}
 #inquire a:hover{opacity:.7;}
+
 
