@@ -29,7 +29,7 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat; /* path matches your repo */
+  background:url("img/farm.jpg") center/cover no-repeat; /* image path matches /img */
   isolation:isolate;
 }
 .hero::before{
@@ -99,21 +99,15 @@ body{
   font-size:clamp(22px,3vw,36px);
   color:#111;
 
-  /* contained width */
   max-width:28ch;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
 
-  /* drop it down a bit */
-  padding-top:4rem;
+  padding-top:4rem; /* bring quote down */
 }
 
 /* author line */
-.quote-author{
-  display:block;
-  margin-top:1
-
 .quote-author{
   display:block;
   margin-top:1.5rem;
@@ -219,7 +213,7 @@ body{
 .schedule-grid{
   display: grid;
   grid-template-columns: 3fr 3fr;
-  gap: clamp(60px, 8vw, 120px);   /* more space between the two columns */
+  gap: clamp(60px, 8vw, 120px);   /* ample space between columns */
   align-items: start;
   margin: 0 auto clamp(32px, 5vw, 60px);
   max-width: 1100px;
@@ -329,3 +323,4 @@ body{
   transition: opacity 0.2s ease;
 }
 #inquire a:hover { opacity: 0.7; }
+
