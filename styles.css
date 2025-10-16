@@ -29,7 +29,8 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat; /* image path matches /img */
+  /* IMPORTANT: absolute path with repo prefix for GitHub Pages */
+  background:url("/chop/img/farm.jpg") center/cover no-repeat;
   isolation:isolate;
 }
 .hero::before{
@@ -104,7 +105,7 @@ body{
   margin-right:auto;
   text-align:left;
 
-  padding-top:4rem; /* bring quote down */
+  padding-top:4rem;
 }
 
 /* author line */
@@ -181,7 +182,6 @@ body{
 }
 .residency-inner{ max-width: 1100px; margin: 0 auto; }
 
-/* Heading: lowercase, bold, not italic */
 .residency-title{
   font-family: var(--font-serif);
   font-weight: 700;
@@ -195,7 +195,6 @@ body{
   opacity: 1;
 }
 
-/* Blurb under heading */
 .residency-blurb{
   max-width: 70ch;
   margin: 0 auto clamp(28px, 4vw, 44px);
@@ -209,11 +208,10 @@ body{
   opacity: .95;
 }
 
-/* Two-column schedule */
 .schedule-grid{
   display: grid;
   grid-template-columns: 3fr 3fr;
-  gap: clamp(60px, 8vw, 120px);   /* ample space between columns */
+  gap: clamp(60px, 8vw, 120px);
   align-items: start;
   margin: 0 auto clamp(32px, 5vw, 60px);
   max-width: 1100px;
@@ -257,7 +255,6 @@ body{
   opacity: .85;
 }
 
-/* Right column list */
 .cycle-list{
   margin: 0;
   padding-left: 1rem;
@@ -267,7 +264,6 @@ body{
 }
 .cycle-list li{ margin: 0 0 .45rem 0; }
 
-/* Responsive: stack schedule columns on small screens */
 @media (max-width: 900px){
   .schedule-grid{ grid-template-columns: 1fr; gap: 24px; }
 }
@@ -288,7 +284,6 @@ body{
   box-shadow: 0 12px 36px rgba(0,0,0,.35);
 }
 
-/* Responsive gallery */
 @media (max-width: 1000px){
   .residency-gallery{ grid-template-columns: repeat(2, 1fr); }
 }
