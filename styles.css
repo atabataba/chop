@@ -29,7 +29,7 @@ body{
   display:grid;
   place-items:center;
   padding:var(--pad);
-  background:url("img/farm.jpg") center/cover no-repeat;
+  background:url("img/farm.jpg") center/cover no-repeat; /* path matches your repo */
   isolation:isolate;
 }
 .hero::before{
@@ -99,17 +99,21 @@ body{
   font-size:clamp(22px,3vw,36px);
   color:#111;
 
-  /* Contained/boxed feel */
+  /* contained width */
   max-width:28ch;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
 
-  /* 👇 Add space to bring it down */
+  /* drop it down a bit */
   padding-top:4rem;
 }
 
 /* author line */
+.quote-author{
+  display:block;
+  margin-top:1
+
 .quote-author{
   display:block;
   margin-top:1.5rem;
@@ -120,7 +124,7 @@ body{
 
 .about-right{ align-self:start; }
 
-/* 'about' label — lowercase, bold, not italic; adjust size here */
+/* 'about' label — lowercase, bold, not italic */
 .about-right .kicker{
   margin:.25rem 0 1rem;
   font-family:var(--font-serif);
@@ -197,7 +201,7 @@ body{
   opacity: 1;
 }
 
-/* Brief blurb under heading */
+/* Blurb under heading */
 .residency-blurb{
   max-width: 70ch;
   margin: 0 auto clamp(28px, 4vw, 44px);
@@ -215,7 +219,7 @@ body{
 .schedule-grid{
   display: grid;
   grid-template-columns: 3fr 3fr;
-  gap: clamp(40px, 6vw, 90px);
+  gap: clamp(60px, 8vw, 120px);   /* more space between the two columns */
   align-items: start;
   margin: 0 auto clamp(32px, 5vw, 60px);
   max-width: 1100px;
@@ -258,6 +262,8 @@ body{
   color: #111;
   opacity: .85;
 }
+
+/* Right column list */
 .cycle-list{
   margin: 0;
   padding-left: 1rem;
@@ -269,7 +275,7 @@ body{
 
 /* Responsive: stack schedule columns on small screens */
 @media (max-width: 900px){
-  .schedule-grid{ grid-template-columns: 1fr; }
+  .schedule-grid{ grid-template-columns: 1fr; gap: 24px; }
 }
 
 /* 3-image gallery */
@@ -323,17 +329,3 @@ body{
   transition: opacity 0.2s ease;
 }
 #inquire a:hover { opacity: 0.7; }
-
-/* ===== Residency positioning tweaks ===== */
-#residency .schedule-grid .schedule-pane:first-child{
-  margin-left: clamp(100px, 14vw, 200px);
-}
-#residency .schedule-grid .schedule-pane:last-child{
-  margin-top: clamp(40px, 4vw, 80px);
-}
-@media (max-width: 900px){
-  #residency .schedule-grid .schedule-pane:first-child{ margin-left: 0; }
-  #residency .schedule-grid .schedule-pane:last-child{ margin-top: 0; }
-}
-
-
