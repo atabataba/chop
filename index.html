@@ -1,4 +1,5 @@
-<!doctype html>
+<!
+ctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -10,15 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles.css?v=20251009" />
+  <link rel="stylesheet" href="styles.css?v=1012" />
 </head>
 
 <body>
-
-  <div id="intro" class="intro-overlay" aria-hidden="true">
-    <canvas id="introCanvas"></canvas>
-  </div>
-
+  <!-- HERO -->
   <header class="hero" role="banner" aria-label="Intro">
     <h1 class="site-title" aria-label="CHOP AND CARRY FARM">
       <span>CHOP</span>
@@ -35,19 +32,20 @@
   </header>
 
   <main id="main">
-
     <!-- ABOUT -->
     <section id="about" class="section about-split" aria-labelledby="about-title">
       <div class="about-left">
         <h2 id="about-title" class="about-hero">
-          Before enlightenment, chop wood, carry water.<br>
-          After enlightenment, chop wood, carry water.
+          To study the self is to forget the self.<br>
+          To forget the self is to be actualized by myriad things.<br>
+          <span class="quote-author">— Dōgen Zenji</span>
         </h2>
       </div>
 
       <div class="about-right">
         <div class="about-right-inner">
-          <p class="kicker">(about chop and carry farm)</p>
+          <p class="kicker">about</p>
+
           <ol class="about-list">
             <li>
               <div class="item-title"><em>mission</em></div>
@@ -67,6 +65,12 @@
                 A new practice center is taking shape in Hawai‘i, calling for people to help build its foundations and form a Zen community.
               </div>
             </li>
+            <li>
+              <div class="item-title"><em>residency</em></div>
+              <div class="item-copy">
+                Zazen, work, and study form the core of daily life and practice here.
+              </div>
+            </li>
           </ol>
 
           <div class="about-cta">
@@ -79,23 +83,48 @@
     <!-- RESIDENCY -->
     <section id="residency" class="residency-block" aria-labelledby="residency-title">
       <div class="residency-inner">
-        <h2 id="residency-title" class="residency-title">Residency</h2>
-    
-        <div class="residency-copy">
-          <p>
-            Up to eight people will live and practice together, contributing to the early
-            formation of the practice and community. The schedule follows a ten-day cycle based
-            on the lunar calendar, with zazen, communal work, and study forming the core of practice.
-            Personal projects in areas such as woodworking, ceramics, writing, tofu making,
-            miso and pickle fermentation, silkworms, or metalwork develop skills that support both
-            individual growth and the life of the community. Daily life combines meditation, work,
-            and craft as one continuous practice.
-          </p>
+        <h2 id="residency-title" class="residency-title">residency</h2>
+
+        <div class="residency-blurb">
+          The residency schedule is organized in ten-day cycles based on the lunar calendar.
+          Days ending in zero are rest days, and days ending in five are half days.
         </div>
-    
-        <figure class="residency-figure">
-          <img src="./zazen.jpg" alt="Zazen practice at the farm" class="residency-img">
-        </figure>
+
+        <div class="schedule-grid">
+          <div class="schedule-pane">
+            <h3 class="schedule-title">Daily Schedule</h3>
+            <dl class="daily-schedule">
+              <div><dt>5:30</dt><dd>Wake up</dd></div>
+              <div><dt>6:00</dt><dd>Zazen</dd></div>
+              <div><dt>6:40</dt><dd>Chanting the Heart Sutra</dd></div>
+              <div><dt>7:00</dt><dd>Breakfast</dd></div>
+              <div><dt>8:00</dt><dd>Communal work: caring for the farm and daily tasks</dd></div>
+              <div><dt>12:00</dt><dd>Lunch</dd></div>
+              <div><dt>1:00</dt><dd>Personal projects: crafts and skills that support community life</dd></div>
+              <div><dt>5:00</dt><dd>Practice discussion</dd></div>
+              <div><dt>7:00</dt><dd>Zazen</dd></div>
+              <div><dt>7:40</dt><dd>Dharma discussion</dd></div>
+              <div><dt>9:00</dt><dd>Sleep</dd></div>
+            </dl>
+            <p class="schedule-note">*There is no formal dinner.</p>
+          </div>
+
+          <div class="schedule-pane">
+            <h3 class="schedule-title">Ten-Day Cycle</h3>
+            <ul class="cycle-list">
+              <li>Days 1–4: Follow the daily schedule above.</li>
+              <li>Day 5: Half-day — schedule through lunch, then free time.</li>
+              <li>Days 6–9: Follow the daily schedule above.</li>
+              <li>Day 10: Breakfast, morning chores, and rest for the day.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="residency-gallery">
+          <figure class="residency-card"><img src="img/zazen.jpg" alt="Zazen practice at the farm"></figure>
+          <figure class="residency-card"><img src="img/hall.jpg" alt="Hall at the practice center"></figure>
+          <figure class="residency-card"><img src="img/door.jpg" alt="Door and entryway detail"></figure>
+        </div>
       </div>
     </section>
 
@@ -109,163 +138,9 @@
         Email: <a href="mailto:Pauldiscoedesign@gmail.com">Pauldiscoedesign@gmail.com</a>
       </p>
     </section>
-    
   </main>
-
-  <!-- ENSŌ ANIMATION -->
-  <script>
-  (() => {
-    const overlay = document.getElementById('intro');
-    const canvas  = document.getElementById('introCanvas');
-    const ctx     = canvas.getContext('2d', { alpha: true });
-
-    const T = { scribble: 700, draw: 1700, hold: 650 };
-    const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    function resize() {
-      const w = window.innerWidth, h = window.innerHeight;
-      canvas.width = Math.floor(w * DPR);
-      canvas.height = Math.floor(h * DPR);
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const INK = '#000';
-    const cx = () => window.innerWidth / 2;
-    const cy = () => window.innerHeight / 2;
-    const R  = () => Math.min(window.innerWidth, window.innerHeight) * 0.30;
-    const TAU = Math.PI * 2;
-    const deg = d => d * Math.PI / 180;
-    const norm = a => (a % TAU + TAU) % TAU;
-    const easeInOut = t => (t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2);
-    const snoise = (a,b) => Math.sin(a)*0.5 + Math.sin(b)*0.5;
-
-    const hairs = 30;
-    const hairPts = Array.from({ length: hairs }, (_, i) => ({
-      x: cx(), y: cy(), ang: (i/hairs)*TAU, len: 6 + Math.random()*7
-    }));
-    function drawScribbles(k) {
-      const chaos = 1 - k;
-      for (let i = 0; i < hairs; i++) {
-        const p = hairPts[i];
-        p.ang += 0.10 + i*0.0008;
-        const radius = (0.12 + 0.82*k) * R();
-        const ang = p.ang + snoise(p.x*0.01, p.y*0.01 + i) * 0.7 * chaos;
-        const tx = cx() + radius * Math.cos(ang);
-        const ty = cy() + radius * Math.sin(ang);
-        p.x += (tx - p.x) * (0.18 + 0.12*(1-chaos)) + (Math.random()-0.5)*7*chaos;
-        p.y += (ty - p.y) * (0.18 + 0.12*(1-chaos)) + (Math.random()-0.5)*7*chaos;
-
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.x + Math.cos(ang) * p.len, p.y + Math.sin(ang) * p.len);
-        ctx.lineWidth = 4 + 2*(1-k);
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = INK;
-        ctx.globalAlpha = 0.9;
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-    }
-
-    const START_DEG = 135;
-    const TARGET_ARC_PCT = 0.9;
-    const DIR = 1;
-    const startA = deg(START_DEG);
-    const desiredArc = TARGET_ARC_PCT * TAU;
-
-    function drawRibbon(progress) {
-      const baseWidth = 54;
-      const coreLayers = 4;
-      const featherLayers = 2;
-      const dryStartT = 0.72;
-      const r = R();
-      const Cx = cx(), Cy = cy();
-      const steps = 900;
-      const widthAt = t => {
-        let w = baseWidth;
-        const e = 0.12;
-        if (t < e) w *= easeInOut(t / e);
-        else if (t > 1 - e) w *= easeInOut((1 - t) / e);
-        if (t > dryStartT) { const d = (t - dryStartT) / (1 - dryStartT); w *= 1 - d * 0.18; }
-        return w;
-      };
-      const drawLayer = (radiusOffset, alpha) => {
-        ctx.fillStyle = INK;
-        ctx.globalAlpha = alpha;
-        let prevL = null, prevR = null;
-        const maxStep = Math.floor(steps * progress);
-        for (let i = 0; i <= maxStep; i++) {
-          const u = i / steps;
-          const a = norm(startA + DIR * (desiredArc * u));
-          const x = Cx + r * Math.cos(a);
-          const y = Cy + r * Math.sin(a);
-          const tx = -Math.sin(a), ty = Math.cos(a);
-          const nx = -ty, ny = tx;
-          const w = 0.5 * widthAt(u);
-          const L = { x: x + nx * w, y: y + ny * w };
-          const Rb = { x: x - nx * w, y: y - ny * w };
-          if (prevL && prevR) {
-            ctx.beginPath();
-            ctx.moveTo(prevL.x, prevL.y);
-            ctx.lineTo(prevR.x, prevR.y);
-            ctx.lineTo(Rb.x, Rb.y);
-            ctx.lineTo(L.x, L.y);
-            ctx.closePath();
-            ctx.fill();
-          }
-          prevL = L; prevR = Rb;
-          if (i === maxStep) {
-            ctx.beginPath();
-            ctx.arc(x, y, w * 0.6, 0, TAU);
-            ctx.fill();
-          }
-        }
-        ctx.globalAlpha = 1;
-      };
-      for (let k = 0; k < coreLayers; k++) {
-        const f = (k / (coreLayers - 1)) - 0.5;
-        drawLayer(f * 1.0, 0.95);
-      }
-      for (let k = 0; k < featherLayers; k++) {
-        drawLayer(-1.2 - k * 0.6, 0.22 * (1 - k * 0.35));
-      }
-    }
-
-    const t0 = performance.now();
-    function frame(now) {
-      const t = now - t0;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      if (t < T.scribble) {
-        drawScribbles(t / T.scribble);
-        requestAnimationFrame(frame); return;
-      }
-      if (t < T.scribble + T.draw) {
-        const k = (t - T.scribble) / T.draw;
-        const e = easeInOut(k);
-        if (e < 0.65) {
-          ctx.globalAlpha = 1 - e;
-          drawScribbles(1);
-          ctx.globalAlpha = 1;
-        }
-        drawRibbon(e);
-        requestAnimationFrame(frame); return;
-      }
-      if (t < T.scribble + T.draw + T.hold) {
-        drawRibbon(1);
-        requestAnimationFrame(frame); return;
-      }
-      overlay.classList.add('fade-out');
-      overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-    }
-
-    requestAnimationFrame(frame);
-  })();
-  </script>
 </body>
 </html>
+
 
 
