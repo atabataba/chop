@@ -9,13 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
-  <!-- CSS (relative path for GitHub Pages project site) -->
-  <link rel="stylesheet" href="./styles.css" />
+  <!-- CSS with cache-bust -->
+  <link rel="stylesheet" href="./styles.css?v=3" />
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="img/farm.jpg">
 </head>
 
 <body>
   <!-- HERO -->
-  <header class="hero" role="banner" aria-label="Intro">
+  <!-- Inline fallback ensures the image shows even if old CSS is cached.
+       You can remove the style="" after you confirm it’s working. -->
+  <header class="hero" role="banner" aria-label="Intro"
+          style="background-image:url('img/farm.jpg')">
     <h1 class="site-title" aria-label="CHOP AND CARRY FARM">
       <span>CHOP</span>
       <span>AND</span>
@@ -140,6 +145,5 @@
   </main>
 </body>
 </html>
-
 
 
