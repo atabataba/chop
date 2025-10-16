@@ -50,7 +50,7 @@ body{
 
 /* Quote — bolder and LOWER (≈30% more than before) */
 .about-left .about-hero{
-  margin-top: 8rem; /* was 6rem → push down more */
+  margin-top: 8rem;
   font-family:var(--font-serif);
   font-weight:800;
   font-style:normal;
@@ -80,10 +80,8 @@ body{
 
 /* ===== RESIDENCY ===== */
 .residency-block{background-color:#DAD6CD;color:#111;padding:clamp(40px,6vw,80px) 1rem;}
-
-/* Narrower inner width so gallery doesn’t hug edges */
 .residency-inner{
-  max-width: 1200px;  /* was wider; this pulls everything in from page edges */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -96,11 +94,21 @@ body{
   font-family:var(--font-serif);font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:#111;opacity:.95;
 }
 
+/* ====== Shift Daily Schedule + Ten-Day Cycle to the right ====== */
 .schedule-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:clamp(30px,4vw,60px);align-items:start;margin:0 auto 1.25rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(30px,4vw,60px);
+  align-items:start;
+  margin: 0 auto 1.25rem;
+  transform: translateX(25%); /* new addition */
 }
-@media(max-width:900px){.schedule-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){
+  .schedule-grid{
+    grid-template-columns:1fr;
+    transform: none;
+  }
+}
 
 .schedule-title{
   font-family:var(--font-serif);font-weight:700;font-size:clamp(17px,1.8vw,20px);margin:0 0 .5rem 0;
@@ -119,18 +127,11 @@ body{
 .cycle-list{margin:0;padding-left:1rem;font-family:var(--font-serif);color:#111;}
 .cycle-list li{margin:0 0 .45rem 0;}
 
-/* Move Daily Schedule right a bit (since inner width is smaller now) */
-#residency .schedule-grid .schedule-pane:first-child{
-  margin-left: clamp(60px, 6vw, 100px);
-}
-
 /* Drop Ten-Day Cycle down (~50%) relative to its previous position */
 #residency .schedule-grid .schedule-pane:last-child{
   margin-top: clamp(60px, 8vw, 160px);
 }
-
 @media (max-width: 900px){
-  #residency .schedule-grid .schedule-pane:first-child{ margin-left: 0; }
   #residency .schedule-grid .schedule-pane:last-child{ margin-top: 0; }
 }
 
@@ -144,8 +145,8 @@ body{
 }
 
 .residency-card{
-  width: clamp(260px, 28vw, 320px); /* smaller overall card width */
-  aspect-ratio: 1 / 1;              /* square */
+  width: clamp(260px, 28vw, 320px);
+  aspect-ratio: 1 / 1;
 }
 
 .residency-card img{
