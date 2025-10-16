@@ -101,7 +101,7 @@ body{
   gap:clamp(30px,4vw,60px);
   align-items:start;
   margin: 0 auto 1.25rem;
-  transform: translateX(35%); /* new addition */
+  transform: translateX(45%); /* new addition */
 }
 @media(max-width:900px){
   .schedule-grid{
