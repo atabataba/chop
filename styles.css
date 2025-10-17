@@ -99,7 +99,7 @@ body {
   align-items: start;
 }
 
-/* Quote — bold and lowered */
+/* Quote — bolder and lower */
 .about-left .about-hero {
   margin-top: 8rem;
   font-family: var(--font-serif);
@@ -216,7 +216,7 @@ body {
   opacity: 0.95;
 }
 
-/* Center two columns but shift both left slightly */
+/* Center two columns and move slightly right */
 .schedule-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -224,7 +224,7 @@ body {
   align-items: start;
   max-width: 980px;
   margin: clamp(32px, 5vw, 56px) auto 1.5rem auto;
-  transform: translateX(-6%); /* shift entire block left */
+  transform: translateX(4%); /* shifted right for visual balance */
 }
 #residency .schedule-grid .schedule-pane {
   margin: 0 !important;
