@@ -26,7 +26,6 @@ body {
   background: #fff;
 }
 
-/* ===== HERO ===== */
 .hero {
   min-height: 100vh;
   position: relative;
@@ -99,7 +98,6 @@ body {
   align-items: start;
 }
 
-/* Quote — bolder and lower */
 .about-left .about-hero {
   margin-top: 8rem;
   font-family: var(--font-serif);
@@ -187,7 +185,6 @@ body {
   }
 }
 
-/* ===== RESIDENCY ===== */
 .residency-block {
   background-color: #DAD6CD;
   color: #111;
@@ -216,7 +213,6 @@ body {
   opacity: 0.95;
 }
 
-/* Center two columns and move slightly right */
 .schedule-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -224,7 +220,7 @@ body {
   align-items: start;
   max-width: 980px;
   margin: clamp(32px, 5vw, 56px) auto 1.5rem auto;
-  transform: translateX(4%); /* shifted right for visual balance */
+  transform: translateX(4%); 
 }
 #residency .schedule-grid .schedule-pane {
   margin: 0 !important;
@@ -279,7 +275,6 @@ body {
   margin: 0 0 0.45rem 0;
 }
 
-/* ===== GALLERY ===== */
 .residency-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -309,7 +304,7 @@ body {
   }
 }
 
-/* ===== INQUIRE ===== */
+
 #inquire {
   text-align: center;
   margin: 5rem 0;
